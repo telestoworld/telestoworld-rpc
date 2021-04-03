@@ -5,7 +5,7 @@ import { isPromiseLike } from '../common/core/isPromiseLike'
 import { hasOwnSymbol } from '../common/core/SymbolShim'
 
 /** this is defined in the constructor ScriptingHost() */
-const loadAPIsNotificationName = 'LoadComponents'
+const loadAPIsNotificationName =  'LoadComponents'
 
 // If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.

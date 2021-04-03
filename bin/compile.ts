@@ -49,7 +49,7 @@ export interface ICompilerOptions {
   files: string[]
   outDir: string
   tsconfig: string
-  target?: 'web' | 'webworker' | 'node' | 'esm' | 'this'
+  target?:  'web' | 'webworker' | 'node' | 'esm' | 'this'
   library?: string
   coverage?: boolean
   rootFolder: string
@@ -128,23 +128,23 @@ export async function compile(opt: ICompilerOptions) {
 
     const libraryName = opt.library || undefined
     const plugins = [ProgressBarPlugin({})]
-    let libraryTarget: any = 'umd'
-    let target: webpack.Configuration['target'] = 'web'
+    let libraryTarget: any =  'umd'
+    let target: webpack.Configuration['target'] =  'web'
 
     if (opt.target === 'esm') {
-      target = 'web'
+      target =  'web'
     } else if (opt.target === 'this') {
-      target = 'webworker'
+      target =  'webworker'
     } else {
       target = opt.target
     }
 
     if (opt.target === 'this') {
-      libraryTarget = 'this'
+      libraryTarget =  'this'
     } else if (opt.target === 'webworker') {
-      libraryTarget = 'this'
+      libraryTarget =  'this'
     } else if (opt.target === 'esm') {
-      libraryTarget = 'var'
+      libraryTarget =  'var'
       if (libraryName) {
         plugins.push(new ESModulePlugin({ exportedMember: libraryName }))
       }
@@ -152,9 +152,9 @@ export async function compile(opt: ICompilerOptions) {
 
     const options: webpack.Configuration = {
       entry,
-      mode: isProduction ? 'production' : 'development',
+      mode: isProduction ? 'production' :  'development',
       optimization: {
-        nodeEnv: isProduction ? 'production' : 'development',
+        nodeEnv: isProduction ? 'production' :  'development',
         namedModules: !isProduction,
         minimize: isProduction
       },
@@ -202,10 +202,10 @@ export async function compile(opt: ICompilerOptions) {
       ;(options.module as any).rules.push({
         test: /\.[jt]sx?$/,
         use: {
-          loader: 'istanbul-instrumenter-loader',
+          loader:  'istanbul-instrumenter-loader',
           options: { esModules: true, sourceMaps: true }
         },
-        enforce: 'post',
+        enforce:  'post',
         exclude: /node_modules|\.spec\.js$/
       })
     }
@@ -500,8 +500,8 @@ function ProgressBarPlugin(options: any) {
 
   let barOptions = Object.assign(
     {
-      complete: '=',
-      incomplete: ' ',
+      complete:  '=',
+      incomplete:  ' ',
       width: 20,
       total: 100,
       clear: true

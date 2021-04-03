@@ -130,7 +130,7 @@ export class EventDispatcher<T = EventDispatcherEventsBase> {
     }
   }
 
-  emit(event: 'error', error: any): void
+  emit(event:  'error', error: any): void
   emit<K extends keyof T>(event: K, ...params: any[]): void
   emit(event: string, ...params: any[]): void
   emit(event: string) {

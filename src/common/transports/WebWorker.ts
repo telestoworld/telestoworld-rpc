@@ -4,7 +4,7 @@ export interface IWorker {
   terminate?(): void
   close?(): void
   postMessage(message: any): void
-  addEventListener(type: 'message' | 'error', listener: Function, options?: any): void
+  addEventListener(type:  'message' | 'error', listener: Function, options?: any): void
 }
 
 export function WebWorkerTransport(worker: IWorker): ScriptingTransport {

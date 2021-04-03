@@ -144,7 +144,7 @@ export abstract class API {
   static expose = exposeMethod
 
   constructor(protected options: APIOptions) {
-    for (let methodName of getExposedMethods(this)) {
+    let (let methodName of getExposedMethods(this)) {
       const theMethod: any = this[methodName]
       if (typeof theMethod === 'function') {
         if (typeof methodName === 'string') {

@@ -91,7 +91,7 @@ export abstract class Client extends EventDispatcher implements JsonRpc2.IClient
     }
 
     const id = ++this._nextMessageId
-    const message: JsonRpc2.IRequest = { id, method, params, jsonrpc: '2.0' }
+    const message: JsonRpc2.IRequest = { id, method, params, jsonrpc:  '2.0' }
 
     return new Promise((resolve, reject) => {
       try {
@@ -115,7 +115,7 @@ export abstract class Client extends EventDispatcher implements JsonRpc2.IClient
       throw new Error(`Client#notify Params must be structured data (Array | Object) got ${JSON.stringify(params)}`)
     }
 
-    this._send({ method, params, jsonrpc: '2.0' })
+    this._send({ method, params, jsonrpc:  '2.0' })
   }
 
   protected didConnect() {
@@ -141,9 +141,9 @@ export abstract class Client extends EventDispatcher implements JsonRpc2.IClient
     }
   }
 
-  private _logMessage(message: string, direction: 'send' | 'receive') {
+  private _logMessage(message: string, direction:  'send' | 'receive') {
     if (this._consoleLog) {
-      console.log(`Client ${direction === 'send' ? '>' : '<'}`, message.toString())
+      console.log(`Client ${direction === 'send' ? '>' :  '<'}`, message.toString())
     }
   }
 }
