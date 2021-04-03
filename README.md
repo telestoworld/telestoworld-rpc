@@ -1,13 +1,13 @@
-[![CircleCI](https://circleci.com/gh/decentraland/metaverse-rpc.svg?style=svg&circle-token=33a7ab6330a3c900c456c0367c118d912e48f484)](https://circleci.com/gh/decentraland/metaverse-rpc).
-[![Build status](https://ci.appveyor.com/api/projects/status/v2ql8549rfh311go/branch/master?svg=true)](https://ci.appveyor.com/project/decentraland/metaverse-rpc/branch/master)
+[![CircleCI](https://circleci.com/gh/telestoworld/metaverse-rpc.svg?style=svg&circle-token=33a7ab6330a3c900c456c0367c118d912e48f484)](https://circleci.com/gh/telestoworld/metaverse-rpc).
+[![Build status](https://ci.appveyor.com/api/projects/status/v2ql8549rfh311go/branch/master?svg=true)](https://ci.appveyor.com/project/telestoworld/metaverse-rpc/branch/master)
 
-# `decentraland-rpc`
+# `telestoworld-rpc`
 
-This repository contains the low-level API that allows us to run sandboxed (and even remote) code for Decentralands LANDs and other systems like Physics.
+This repository contains the low-level API that allows us to run sandboxed (and even remote) code for Telestoworlds SPACEs and other systems like Physics.
 
 ## Scripting
 
-Scripts are pieces of logic that run inside the context of a Web Worker or remotely in a server. They are meant to provide the user a way to run custom logic inside the player's client, allowing the creation of rich experiences inside Decentraland. To achieve this, low level hooks are exposed from the scripting host and consumed by the scripting client.
+Scripts are pieces of logic that run inside the context of a Web Worker or remotely in a server. They are meant to provide the user a way to run custom logic inside the player's client, allowing the creation of rich experiences inside Telestoworld. To achieve this, low level hooks are exposed from the scripting host and consumed by the scripting client.
 
 ## Transports
 
@@ -52,9 +52,9 @@ An example implementation can be found at [7.0.MethodsInjection.ts](test/fixture
 
 Why do we create a component based system? [Components](http://gameprogrammingpatterns.com/component.html)
 
-# Decentraland Compiler
+# Telestoworld Compiler
 
-The Decentraland Compiler is used to build all sort of TypeScript related projects. Both DCL's client all all of the SDK's dynamic scenes use it. You can think about it as an scoped task runner which only does a few things but it does them well.
+The Telestoworld Compiler is used to build all sort of TypeScript related projects. Both DCL's client all all of the SDK's dynamic scenes use it. You can think about it as an scoped task runner which only does a few things but it does them well.
 
 To get started create a build.json file:
 
@@ -71,11 +71,11 @@ To get started create a build.json file:
 
 Then run the following command:
 
-`decentraland-compiler build.json`
+`telestoworld-compiler build.json`
 
 To run in watch mode:
 
-`decentraland-compiler build.json --watch`
+`telestoworld-compiler build.json --watch`
 
 To use custom loaders (Webpack builds only) refer to https://webpack.js.org/concepts/loaders/#inline
 
@@ -83,4 +83,4 @@ To use custom loaders (Webpack builds only) refer to https://webpack.js.org/conc
 
 ## Copyright info
 
-This repository is protected with a standard Apache 2 licence. See the terms and conditions in the [LICENCE](https://github.com/decentraland/decentraland-rpc/blob/master/LICENSE) file.
+This repository is protected with a standard Apache 2 licence. See the terms and conditions in the [LICENCE](https://github.com/telestoworld/telestoworld-rpc/blob/master/LICENSE) file.
