@@ -38,7 +38,7 @@ export function getExposedMethods<T extends API>(instance: T): Set<keyof T> {
 }
 
 export function rateLimit<T>(interval: number = 100) {
-  return function(
+  return function (
     target: T,
     propertyKey: string,
     descriptor: TypedPropertyDescriptor<(...args: any[]) => Promise<any | void>>
@@ -48,7 +48,7 @@ export function rateLimit<T>(interval: number = 100) {
 
     return {
       ...descriptor,
-      value: function(this: T) {
+      value: function (this: T) {
         const now = performance.now()
 
         if (now - lastCall < interval) {
@@ -63,7 +63,7 @@ export function rateLimit<T>(interval: number = 100) {
 }
 
 export function throttle<T>(callLimit: number, interval: number = 100) {
-  return function(
+  return function (
     target: T,
     propertyKey: string,
     descriptor: TypedPropertyDescriptor<(...args: any[]) => Promise<any | void>>
@@ -74,7 +74,7 @@ export function throttle<T>(callLimit: number, interval: number = 100) {
 
     return {
       ...descriptor,
-      value: function(this: T) {
+      value: function (this: T) {
         const now = performance.now()
 
         if (now - initTime >= interval) {
@@ -100,12 +100,12 @@ export type APIOptions = {
   on(event: string, handler: <A, O extends object>(params: Array<A> | O) => void): void
   notify(event: string, params?: Object | Array<any>): void
   expose(event: string, handler: <A, O extends object>(params: Array<A> | O) => Promise<any>): void
-  getAPIInstance<X>(component: { new (options: APIOptions): X }): X
+  getAPIInstance<X>(component: { new(options: APIOptions): X }): X
   getAPIInstance(name: string): API | null
 }
 
 export type APIClass<T> = {
-  new (options: APIOptions): T
+  new(options: APIOptions): T
 }
 
 export type ExposableMethod = (...args: any[]) => Promise<any>
@@ -144,7 +144,7 @@ export abstract class API {
   static expose = exposeMethod
 
   constructor(protected options: APIOptions) {
-    let (let methodName of getExposedMethods(this)) {
+    for (let methodName of getExposedMethods(this)) {
       const theMethod: any = this[methodName]
       if (typeof theMethod === 'function') {
         if (typeof methodName === 'string') {
@@ -160,7 +160,7 @@ export abstract class API {
 }
 
 export abstract class SubscribableAPI extends API {
-  abstract async subscribe(event: string): Promise<void>
+  abstract subscribe(event: string): Promise<void>
 }
 
 export interface ISubscribableAPI {

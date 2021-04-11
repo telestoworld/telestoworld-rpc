@@ -1,7 +1,7 @@
 {
   "name": "telestoworld-rpc",
-  "version": "3.1.8",
-  "description": "",
+  "version": "3.2.0",
+  "description": "Telesto World Remote procedure calls",
   "main": "lib/client/index.js",
   "typings": "lib/client/index.d.ts",
   "scripts": {
@@ -39,7 +39,7 @@
     "@types/webpack-sources": "^0.1.5",
     "@types/ws": "^4.0.2",
     "assert": "^1.4.1",
-    "dcl-tslint-config-standard": "^1.1.0",
+    "tw-tslint-config-standard": "3.0.0",
     "express": "^4.16.4",
     "mocha": "^5.2.0",
     "nyc": "^14.1.0",
